@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PSBHttpServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PSBHttpServer_jar</output-path>
+    <root id="archive" name="PSBHttpServer.jar">
+      <element id="module-output" name="PSBHttpServer" />
+    </root>
+  </artifact>
+</component>
