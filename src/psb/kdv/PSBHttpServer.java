@@ -1,13 +1,8 @@
 package psb.kdv;
 
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.URISyntaxException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -27,12 +22,7 @@ public class PSBHttpServer {
 
         try{
             myserver = HttpServer.create(new InetSocketAddress("localhost", port), 0);
-            myserver.createContext("/", new HttpHandler() {
-                @Override
-                public void handle(HttpExchange httpExchange) throws IOException {
-
-                }
-            });
+            myserver.createContext("/", new PSBHttpHandler());
             myserver.setExecutor(pePool);
             myserver.start();
 
