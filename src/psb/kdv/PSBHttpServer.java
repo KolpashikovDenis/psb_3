@@ -22,7 +22,7 @@ public class PSBHttpServer {
 
         try{
             myserver = HttpServer.create(new InetSocketAddress("localhost", port), 0);
-            myserver.createContext("/", new PSBHttpHandler());
+            myserver.createContext("/test", new PSBHttpHandler());
             myserver.setExecutor(pePool);
             myserver.start();
 
